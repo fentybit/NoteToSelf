@@ -4,3 +4,12 @@ CREATE TABLE users (
   username TEXT NOT NULL,
   hash TEXT NOT NULL
 );
+
+-- todos
+CREATE TABLE todos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  user_id INTEGER NOT NULL,
+  priority INTEGER NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL
+);

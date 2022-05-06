@@ -1,4 +1,4 @@
-# Note To Self
+# Note to Self
 
 <div align="center">
   <img src="xx">
@@ -10,61 +10,38 @@
 To-Do Tasks app with Python, Flask and SQL frameworks.<br>
 
 <p><a href="xx">YouTube Demo</a></p>
-<p><a href="xx">DEV Blog</a></p>
+<!-- <p><a href="xx">DEV Blog</a></p> -->
 
 ## About
 
 <p>This is my final project of CS50 (<a href="https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0">CS50x through edX</a>), Harvard University's introduction to the intellectual enterprises of computer science and the art of programming. </p>
-<p>Note to Self app is To-Do Tasks application.</p>
+<p>Note to Self app is a To-Do Tasks application. First time user is required to register, and returning user needs to log in. The Minimum Viable Product (MVP) of Note to Self is for users to be able to log chores along with correspoding level of priorities.</p>
 
-## Features
+## Project Files
 
-<div align="center">
-  <img src="images/wireframe.png">
-</div>
-
-<br>
-
-<div align="center">
-  <img src="images/erd_present.png">
-</div>
-
-<br>
-
-<div align="center">
-  <img src="images/components.png">
-</div>
-
-<br>
-
-**Models** <br>
-User, Event, Category, Image<br>
-
-> user `has_many` :events
-
-> event `belongs_to` :user<br>
-> event `belongs_to` :category<br>
-> event `has_many` :images
-
-> category `has_many` :events
-
-> image `belongs_to` :event
-
-**Controller** <br>
-ApplicationController<br>
-Api::V1::AuthController<br>
-Api::V1::CategoriesController<br>
-Api::V1::EventsController<br>
-Api::V1::ImagesController<br>
-Api::V1::UsersController<br>
-
-**User Account and Validation** <br>
-JWT Authentication: Sign Up, Log In and Log Out.<br>
-
-## API Database
-
-- [x] <a href="https://console.cloud.google.com/apis/dashboard">Google Developer API</a>
-- [x] <a href="https://cloudinary.com/">Cloudinary API</a>
+```
+.
+├── static
+│   ├── apology.gif
+│   ├── favicon.ico
+│   ├── giphy.gif
+│   └── styles.css
+├── templates
+│   ├── apology.html
+│   ├── index.html
+│   ├── layout.html
+│   ├── login.html
+│   ├── register.html
+│   ├── __.html
+│   └── __.html
+├── app.py
+│       user flow and business logic
+├── helpers.py
+│       apology and login_required
+├── notetoself.db
+│       users, todos tables
+└── README.md
+```
 
 ## Installation
 
@@ -83,33 +60,28 @@ $ pip3 install lib50
 $ flask run
 ```
 
-<strong>Instructions</strong>
-
 <p>Open Chrome browser, and redirect to a new local host to start the app.</p>
 
-**Alternatively, it is fully deployed on Netlify!**
+<!-- **Alternatively, it is fully deployed!**
 <br>
-<a href="xx">Note To Self</a>
+<a href="xx">Note to Self</a> -->
 
 ## Build Status and Future Improvement
 
-<p>Storybook was completed in a 2-week timeframe from implementing Rails back-end, ReactJS front-end, Cloudinary API, Google Maps API and Material-UI library. Future cycle of product development as follows:</p>
+<p>Note to Self was completed in a week timeframe from implementing JavaScript, Python, SQL and Bootstrap library. Future cycle of product development as follows:</p>
 
-- [x] Search Bar. Over the time, the user will have many events, and it gets troublesome when the user needs to immediately access a specific event entry. A search bar to quickly type event title and access the journal entry would be useful.
-- [x] \_\_
-
-<div align="center">
-  <img src="xx">
-</div>
-
-- [x] \_\_
+- [x] Search Bar. Over the time, the user will have many tasks, and it gets troublesome when the user needs to immediately access a specific task entry. A search bar to quickly type event title and access the journal entry would be useful.
+- [x] Current task entry allows priority, title and description attributes. Each entry should have more functionality for the user, such as weather, scheduling, sharing capability, image upload and so on. 
+- [x] Create a toggle track for dark mode. 😎
 
 ## Stack
 
 - [x] Flask
+- [x] Jinja
 - [x] SQL
 
 ## Resources
 
 - [x] <a href="https://getbootstrap.com/">Bootstrap</a>
 - [x] <a href="https://giphy.com/">Giphy</a>
+- [x] <a href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja</a>
