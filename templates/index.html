@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 
 {% block main %}
-   <p class="lead">Things moving fast.. feeling overwhelmed?</p>
-   <p class="lead">Welcome to your <mark>to-do lists</mark>!</p>
-   <img alt="main_gif" src="static/giphy.gif" width="480" height="480" class="giphy-embed"/>
+   {% if session["user_id"] %}
+      <p class="lead">Need to work on here</p>
+   {% else %}
+      <p class="lead">Things moving fast.. feeling overwhelmed?</p>
+      <p class="lead">Welcome to your <mark>to-do lists</mark>!</p>
+      <img alt="main_gif" src="static/giphy.gif" width="480" height="480" class="giphy-embed"/>
+   {% endif %}
 {% endblock %}
