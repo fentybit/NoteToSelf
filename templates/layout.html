@@ -70,7 +70,11 @@
     </header>
     {% endif %}
 
-    <main class="container-fluid py-5 text-center">{% block main %}{% endblock %}</main>
+    <main class="container position-absolute top-50 start-50 text-center translate-middle">
+      <div class="position-relative">
+        {% block main %}{% endblock %}
+      </div>
+    </main>
 
     <footer class="footer" style="text-align: center;">
       <div class="container">

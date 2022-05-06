@@ -1,6 +1,13 @@
+import os
+
 from cs50 import SQL
-from flask import Flask, render_template
+from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
+from tempfile import mkdtemp
+from werkzeug.security import check_password_hash, generate_password_hash
+
+from helpers import apology, login_required
+from datetime import datetime, timezone
 
 app = Flask(__name__)
 
@@ -16,3 +23,26 @@ db = SQL("sqlite:///notetoself.db")
 @app.route("/")
 def index():
   return render_template("index.html")
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+  if request.method == "POST":
+    username = request.form.get("username")
+    password = request.form.get("password")
+    confirmation = request.form.get("confirmation")
+
+    if username == "" or len(db.execute("SELECT username FROM users WHERE username = ?", username)) > 0:
+      return apology("Invalid Username: Blank, or already exists")
+    if password == "" or password != confirmation:
+      return apology("Invalid Password: Blank, or does not match")
+
+    db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, generate_password_hash(password))
+
+    rows = db.execute("SELECT * FROM users WHERE username = ?", username)
+
+    session["user_id"] = rows[0]["id"]
+
+    return redirect("/")
+
+  else:
+    return render_template("register.html")
