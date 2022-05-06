@@ -54,6 +54,13 @@ def logout():
   return redirect("/")
 
 
+@app.route("/new")
+@login_required
+def new():
+  # add get and post here
+  return redirect("/new")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
   if request.method == "POST":
