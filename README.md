@@ -70,7 +70,7 @@ $ flask run
 
 <p>Note to Self was completed in a week timeframe from implementing JavaScript, Python, SQL and Bootstrap library. Future cycle of product development as follows:</p>
 
-- [x] Search Bar. Over the time, the user will have many tasks, and it gets troublesome when the user needs to immediately access a specific task entry. A search bar to quickly type event title and access the journal entry would be useful.
+- [x] Quick Find tab. Over the time, the user will have many tasks, and it gets troublesome when the user needs to immediately access a specific task entry. A search bar to quickly type event title and access the journal entry would be useful.
 - [x] Current task entry allows priority, title and description attributes. Each entry should have more functionality for the user, such as weather, scheduling, sharing capability, image upload and so on. 
 - [x] Create a toggle track for dark mode. 😎
 
