@@ -112,4 +112,4 @@ $ flask run
 ## Resources
 
 - [x] <a href="https://getbootstrap.com/">Bootstrap</a>
-- [x] <a href="https://giphy.com/gifs/100days-100daysofanimation-colbay-yNyJdi4iS0HaHC18F1">Giphy</a>
+- [x] <a href="https://giphy.com/">Giphy</a>

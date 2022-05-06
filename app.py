@@ -24,6 +24,29 @@ db = SQL("sqlite:///notetoself.db")
 def index():
   return render_template("index.html")
 
+@app.route("/login", methods={"GET", "POST"})
+def login():
+  session.clear()
+
+  if request.method == "POST":
+    if not request.form.get("username"):
+      return apology("User must provide password")
+    elif not request.form.get("password"):
+      return apology("User must provide password")
+
+    rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+
+    if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+      return apology("Invalid username and/or password")
+
+    session["user_id"] = rows[0]["id"]
+
+    return redirect("/")
+  
+  else:
+    return render_template("login.html")
+    
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
   if request.method == "POST":
