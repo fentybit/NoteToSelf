@@ -11,5 +11,5 @@ CREATE TABLE todos (
   user_id INTEGER NOT NULL,
   priority INTEGER NOT NULL,
   title TEXT NOT NULL,
-  description TEXT NOT NULL
+  description TEXT
 );

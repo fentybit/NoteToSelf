@@ -54,11 +54,15 @@ def logout():
   return redirect("/")
 
 
-@app.route("/new")
+@app.route("/new", methods=["GET", "POST"])
 @login_required
 def new():
-  # add get and post here
-  return redirect("/new")
+  if request.method == "POST":
+    # do something here
+    return redirect("/")
+
+  else:
+    return render_template("new.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
