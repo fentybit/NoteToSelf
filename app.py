@@ -20,8 +20,18 @@ Session(app)
 
 db = SQL("sqlite:///notetoself.db")
 
+
 @app.route("/")
 def index():
+  print(session)
+  if session and session["user_id"]:
+    todos = db.execute("SELECT * FROM todos WHERE user_id = ?", session["user_id"])
+    
+    if not todos:
+      return render_template("index.html")
+    else:
+      return redirect("/todos")
+
   return render_template("index.html")
 
 
@@ -58,8 +68,19 @@ def logout():
 @login_required
 def new():
   if request.method == "POST":
-    # do something here
-    return redirect("/")
+    priority = request.form.get("priority")
+    title = request.form.get("title")
+    description = request.form.get("description")
+    user_id = session["user_id"]
+
+    if not priority:
+      return apology("Please include task priority")
+    elif title == "":
+      return apology("Please include task title")
+
+    db.execute("INSERT INTO todos (user_id, priority, title, description) VALUES (?, ?, ?, ?)", user_id, priority, title, description)
+
+    return redirect("/todos")
 
   else:
     return render_template("new.html")
@@ -87,3 +108,14 @@ def register():
 
   else:
     return render_template("register.html")
+
+
+@app.route("/todos")
+@login_required
+def todos():
+  todos = db.execute("SELECT * FROM todos WHERE user_id = ? ORDER BY priority ASC", session["user_id"])
+
+  for task in todos:
+    print(task['priority'])
+
+  return render_template("todos.html", todos=todos)

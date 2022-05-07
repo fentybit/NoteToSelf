@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  {% for row in todos %}
+    <div class="col">
+      <div class="card border-dark h-100">
+      <div class="card-header text-secondary text-end bg-white">
+        {% if row.priority == 1 %}
+          ☆☆☆
+        {% elif row.priority == 2 %}
+          ☆☆
+        {% else %}
+          ☆
+        {% endif %}
+      </div>
+        <div class="card-body ">
+          <h5 class="card-title">{{ row.title }}</h5>
+          <p class="card-text">
+            {% if row.description %}
+              {{ row.description }}
+            {% else %}
+              -
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+        
+    <div class="col">
+      <div class="card border-secondary h-100">
+        <div class="card-body">
+          <h4 class="card-title">✎</h4>
+          <p class="card-body"><a href="/new" class="btn btn-outline-dark">+ Create Task</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
