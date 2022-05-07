@@ -31,15 +31,17 @@ To-Do Tasks app with Python, Flask and SQL frameworks.<br>
 │   ├── index.html
 │   ├── layout.html
 │   ├── login.html
+│   ├── new.html
 │   ├── register.html
-│   ├── __.html
-│   └── __.html
+│   └── todos.html
 ├── app.py
-│       user flow and business logic
+│       user flow, business logic
 ├── helpers.py
-│       apology and login_required
+│       apology, login_required
 ├── notetoself.db
 │       users, todos tables
+├── notetoself.sql
+│       schema
 └── README.md
 ```
 
