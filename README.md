@@ -1,7 +1,7 @@
 # Note to Self
 
 <div align="center">
-  <img src="xx">
+  <img src="static/main.gif">
 </div>
 
 <br>
