@@ -10,7 +10,7 @@
 To-Do Tasks app with Python, Flask and SQL frameworks.<br>
 
 <p><a href="xx">YouTube Demo</a></p>
-<!-- <p><a href="xx">DEV Blog</a></p> -->
+<p><a href="https://dev.to/fentybit/cs50-note-to-self-f2h">DEV Blog</a></p>
 
 ## About
 
@@ -72,9 +72,9 @@ $ flask run
 
 <p>Note to Self was completed in a week timeframe from implementing JavaScript, Python, SQL and Bootstrap library. Future cycle of product development as follows:</p>
 
-- [x] Edit. User can only create, read and delete. Ideally, we would like edit functionality.
-- [x] Quick Find tab. Over the time, the user will have many tasks, and it gets troublesome when the user needs to immediately access a specific task entry. A search bar to quickly type event title and access the journal entry would be useful.
-- [x] Current task entry allows priority, title and description attributes. Each entry should have more functionality for the user, such as weather, scheduling, sharing capability, image upload and so on. 
+- [x] Edit. User can only create and read. Ideally, we would like edit and delete functionality. 
+- [x] Quick Find tab. Over the time, user will have many tasks, and it gets troublesome when the user needs to immediately access a specific task entry. A search bar to quickly type event title and access the journal entry would be useful.
+- [x] Current task entry allows priority, title and description attributes. Each entry should have more functionality for the user, such as weather, scheduling, sharing capability, image upload and so on.
 - [x] Create a toggle track for dark mode. 😎
 
 ## Stack
