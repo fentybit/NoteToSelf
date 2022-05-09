@@ -70,7 +70,7 @@ $ flask run
 
 ## Build Status and Future Improvement
 
-<p>Note to Self was completed in a week timeframe from implementing JavaScript, Python, SQL and Bootstrap library. Future cycle of product development as follows:</p>
+<p>Note to Self was completed in 3-day timeframe from implementing JavaScript, Python, SQL and Bootstrap library. Future cycle of product development as follows:</p>
 
 - [x] Edit. User can only create and read. Ideally, we would like edit and delete functionality. 
 - [x] Quick Find tab. Over the time, user will have many tasks, and it gets troublesome when the user needs to immediately access a specific task entry. A search bar to quickly type event title and access the journal entry would be useful.
