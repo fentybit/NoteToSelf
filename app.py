@@ -20,7 +20,6 @@ db = SQL("sqlite:///notetoself.db")
 
 @app.route("/")
 def index():
-  print(session)
   if session and session["user_id"]:
     todos = db.execute("SELECT * FROM todos WHERE user_id = ?", session["user_id"])
     
@@ -111,8 +110,5 @@ def register():
 @login_required
 def todos():
   todos = db.execute("SELECT * FROM todos WHERE user_id = ? ORDER BY priority ASC", session["user_id"])
-
-  for task in todos:
-    print(task['priority'])
 
   return render_template("todos.html", todos=todos)

@@ -9,7 +9,7 @@
 <strong>Domain Modeling :: To-Do Lists</strong><br>
 To-Do Tasks app with Python, Flask and SQL frameworks.<br>
 
-<p><a href="xx">YouTube Demo</a></p>
+<p><a href="https://youtu.be/g6M0QU0pnQc">YouTube Demo</a></p>
 <p><a href="https://dev.to/fentybit/cs50-note-to-self-f2h">DEV Blog</a></p>
 
 ## About
